@@ -1,6 +1,8 @@
 {
     "name": "codex-mcp-env",
-    "dockerComposeFile": "../docker-compose.yml",
+    "dockerComposeFile": [
+        "../compose.yml"
+    ],
     "service": "app",
     "workspaceFolder": "/workspace",
     "customizations": {

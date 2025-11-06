@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .container-scripts/core/Dockerfile
+    user: vscode
+    working_dir: /workspace
+    entrypoint:
+      - /bin/bash
+      - /workspace/.container-scripts/core/entrypoint.sh
+    command: ["sleep", "infinity"]
+    volumes:
+      - ./:/workspace:cached
+      - codex_cache:/home/vscode/.cache
+    environment:
+      PROJECT_ROOT: /workspace
+      CONTAINER_HOME: /home/vscode
+      WORKSPACE_HOME: /home/vscode/workspace
+    init: true
+volumes:
+  codex_cache:

@@ -1,5 +1,5 @@
-tools/.codex/auth.json
-tools/.codex/config.toml
-tools/.codex/sessions
-tools/.codex/archived_sessions
 .env
+.container-scripts/user/init-add.sh
+.container-scripts/user/post-start-add.sh
+.container-scripts/user/*.log
+.container-scripts/user/*.tmp
