@@ -3,3 +3,14 @@
 .container-scripts/user/post-start-add.sh
 .container-scripts/user/*.log
 .container-scripts/user/*.tmp
+
+# .container-home/ 配下は、ユーザー固有の設定（シークレット等）
+# が配置される可能性があるため、デフォルトですべて無視する。
+.container-home/*
+
+# ただし、リポジトリで管理したいテンプレートファイルや
+# ディレクトリ構造維持のための .gitkeep は例外的に許可する。
+!.container-home/.gitkeep
+!.container-home/.codex/config.example.toml
+
+# 注意: 実際のシークレット (.codex/config.toml など) はこの設定で誤コミットを防止する。
